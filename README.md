@@ -45,14 +45,14 @@ The diagram below illustrates the end-to-end operational lifecycle managed withi
 
 ```mermaid
 flowchart LR
-    A[Planning] --> B[Readiness Gates]
-    B --> C[Cargo & Logistics]
-    C --> D[Transit & Custody]
-    D --> E[Station Operations]
-    E --> F[Field Operations]
-    F --> G[Emergency Response]
-    G --> H[Priority Sync]
-    H --> I[Audit & Closeout]
+    A["Planning"] --> B["Readiness Gates"]
+    B --> C["Cargo & Logistics"]
+    C --> D["Transit & Custody"]
+    D --> E["Station Operations"]
+    E --> F["Field Operations"]
+    F --> G["Emergency Response"]
+    G --> H["Priority Sync"]
+    H --> I["Audit & Closeout"]
 ```
 
 ---
@@ -224,30 +224,31 @@ Follow this 5-minute walkthrough to experience the key workflows:
 The diagram below outlines the conceptual system layout connecting the central operational tier with polar edge nodes:
 
 ```mermaid
-graph TD
-    subgraph Central Operations [Central Command & Logistics Hub]
-        CP[Central Web Portal]
-        CS[Core Operational Services]
-        AL[(Immutable Audit Ledger)]
+flowchart TD
+    subgraph Central_Ops["Central Command & Logistics Hub"]
+        CP["Central Web Portal"]
+        CS["Core Operational Services"]
+        AL[("Immutable Audit Ledger")]
         CS --> CP
         CS --> AL
     end
 
-    subgraph Sync Tier [Synchronization & Conflict Layer]
-        PQ[P0 / P1 / P2 Priority Engine]
-        CR[Deterministic Conflict Resolver]
+    subgraph Sync_Tier["Synchronization & Conflict Layer"]
+        PQ["P0 / P1 / P2 Priority Engine"]
+        CR["Deterministic Conflict Resolver"]
+        PQ --- CR
     end
 
-    subgraph Polar Edge [Station & Field Tablet Node]
-        ET[Bharati Edge Tablet /edge]
-        LQ[(Local Transaction Queue)]
-        FA[Field Actions: Scan, Muster, Incident]
+    subgraph Polar_Edge["Station & Field Tablet Node"]
+        ET["Bharati Edge Tablet (/edge)"]
+        LQ[("Local Transaction Queue")]
+        FA["Field Actions: Scan, Muster, Incident"]
         FA --> LQ
         LQ --> ET
     end
 
-    ET <-->|Intermittent Satellite Link| Sync Tier
-    Sync Tier <--> CS
+    ET <-->|"Intermittent Satellite Link"| Sync_Tier
+    Sync_Tier <--> CS
 ```
 
 ---
