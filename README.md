@@ -44,15 +44,23 @@ DhruvSetu addresses this fragmentation by establishing **one operational record 
 The diagram below illustrates the end-to-end operational lifecycle managed within the system:
 
 ```mermaid
-flowchart LR
-    A["Planning"] --> B["Readiness Gates"]
-    B --> C["Cargo & Logistics"]
-    C --> D["Transit & Custody"]
-    D --> E["Station Operations"]
-    E --> F["Field Operations"]
-    F --> G["Emergency Response"]
-    G --> H["Priority Sync"]
-    H --> I["Audit & Closeout"]
+flowchart TD
+    subgraph Phase1 ["Phase 1: Planning & Staging"]
+        direction LR
+        A["1. Expedition Planning"] --> B["2. Readiness Stage-Gates"] --> C["3. Cargo Packing & Seals"]
+    end
+
+    subgraph Phase2 ["Phase 2: In-Theater Polar Operations"]
+        direction LR
+        D["4. Transit & Custody"] --> E["5. Station Operations & Stock"] --> F["6. Field Sorties & Muster"]
+    end
+
+    subgraph Phase3 ["Phase 3: Response & Reconciliation"]
+        direction LR
+        G["7. Incident Command"] --> H["8. Prioritized Edge Sync"] --> I["9. Verifiable Audit Trail"]
+    end
+
+    Phase1 ==> Phase2 ==> Phase3
 ```
 
 ---
