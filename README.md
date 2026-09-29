@@ -9,7 +9,7 @@ DhruvSetu is an offline-first operations platform designed to connect the entire
 [![Demo](https://img.shields.io/badge/Status-Interactive_Demo-00E5FF?style=flat-square)](YOUR_DEMO_URL)
 [![Framework](https://img.shields.io/badge/Framework-TanStack_Start_%2F_React_19-0A192F?style=flat-square)](https://tanstack.com/start)
 [![Language](https://img.shields.io/badge/Language-TypeScript_5.8-3178C6?style=flat-square)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-Unlicensed-lightgrey?style=flat-square)](#license)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
 </div>
 
@@ -426,7 +426,7 @@ The application provides dedicated viewports tailored to distinct operational en
 
 ## License
 
-License information will be added before public distribution.
+This project is open-source and licensed under the [MIT License](LICENSE).
 
 ---
 

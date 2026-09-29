@@ -1,7 +1,12 @@
 {
-  "name": "tanstack_start_ts",
-  "private": true,
-  "sideEffects": false,
+  "name": "dhruvsetu",
+  "version": "1.0.0",
+  "description": "One operational record for polar expeditions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StrikerFr/Dhruv-Setu.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite dev",
